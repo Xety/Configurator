@@ -1,0 +1,9 @@
+.idea
+.vscode
+.settings
+.directory
+.brackets.json
+studio.json
+composer.lock
+/vendor/
+/coverage/

@@ -35,6 +35,7 @@ public clear (void)
 
 Clear all options stored.
 
+
 **Parameters**
 
 `This function has no parameters.`
@@ -73,6 +74,7 @@ Result:
 echo $result; // value1
 var_dump($config); // []
 ```
+
 **Parameters**
 
 * `(string) $name`
@@ -98,6 +100,7 @@ Usage:
 ```php
 $this->flush('key1', 'key2');
 ```
+
 **Parameters**
 
 * `(string) $filter`
@@ -120,6 +123,7 @@ public flushOption (string $name)
 
 Flush an option.
 
+
 **Parameters**
 
 * `(string) $name`
@@ -141,6 +145,7 @@ public get (void)
 **Description**
 
 Get all the options with their values.
+
 
 **Parameters**
 
@@ -167,6 +172,7 @@ Usage:
 ```php
 $this->getOption('key');
 ```
+
 **Parameters**
 
 * `(string) $name`
@@ -189,6 +195,7 @@ public hasOption (string $name)
 
 Check if the option exist.
 
+
 **Parameters**
 
 * `(string) $name`
@@ -210,6 +217,7 @@ public merge (array $values, bool $invert)
 **Description**
 
 Merge the values to the options array.
+
 
 **Parameters**
 
@@ -246,6 +254,7 @@ Result:
     ]
 ]
 ```
+
 **Parameters**
 
 * `(string) $name`
@@ -269,6 +278,7 @@ public set (array $values)
 
 Set the values to the options array.
 This function will replace all the configuration options.
+
 **Parameters**
 
 * `(array) $values`
@@ -295,6 +305,7 @@ Usage:
 $this->setOption('key', 'value');
 $this->setOption('key', ['key2' => ['value2']]);
 ```
+
 **Parameters**
 
 * `(string) $name`
@@ -323,6 +334,7 @@ Usage:
 // or it will create it with the value `value`.
  $this->transientOption('key', 'value');
 ```
+
 **Parameters**
 
 * `(string) $name`

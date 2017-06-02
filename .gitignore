@@ -3,6 +3,7 @@
 .settings
 .directory
 .brackets.json
+.phpdoc-md.php
 studio.json
 composer.lock
 /vendor/

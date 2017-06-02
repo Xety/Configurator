@@ -17,8 +17,7 @@ Configurator class.
 |[get](#configuratorget)|Get all the options with their values.|
 |[getOption](#configuratorgetoption)|Get an option value.|
 |[hasOption](#configuratorhasoption)|Check if the option exist.|
-|[merge](#configuratormerge)|Merge the values to the options array, or the current options in
-the values if the param `invert` is true.|
+|[merge](#configuratormerge)|Merge the values to the options array, or the current options inthe values if the param `invert` is true.|
 |[pushOption](#configuratorpushoption)|Push the listed args to the named option.|
 |[set](#configuratorset)|Set the values to the options array. Will replace all the configuration options.|
 |[setOption](#configuratorsetoption)|Set a value to the given option.|

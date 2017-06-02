@@ -62,7 +62,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      * Flush a list of options from the config array.
      *
      * Usage:
-     * ```
+     * ```php
      * $this->flush('key1', 'key2');
      * ```
      *
@@ -94,7 +94,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      * Set a value to the given option.
      *
      * Usage:
-     * ```
+     * ```php
      * $this->setOption('key', 'value');
      * $this->setOption('key', ['key2' => ['value2']]);
      * ```
@@ -116,7 +116,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      * Get an option value.
      *
      * Usage:
-     * ```
+     * ```php
      * $this->getOption('key');
      * ```
      *
@@ -155,17 +155,17 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      * Exemple:
      *
      * Config:
-     * ```
+     * ```php
      * $config = [
      *     'key1' => 'value1'
-     * ]
+     * ];
      * ```
      * Usage:
-     * ```
+     * ```php
      * $result = $this->consumeOption('key1');
      * ```
      * Result:
-     * ```
+     * ```php
      * echo $result; // value1
      * var_dump($config); // []
      * ```
@@ -192,11 +192,11 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      * Push the listed args to the named option.
      *
      * Usage:
-     * ```
+     * ```php
      * $this->pushOption('key', ['key1' => 'value1'], ['key2' => ['value2' => 'value3']]);
      * ```
      * Result:
-     * ```
+     * ```php
      * 'key' => [
      *     'key1' => 'value1',
      *     'key2' => [
@@ -254,7 +254,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      * Adds a transient configuration key/value.
      *
      * Usage:
-     * ```
+     * ```php
      * // Will update the value of the key `key` if it exist,
      * // or it will create it with the value `value`.
      *  $this->transientOption('key', 'value');

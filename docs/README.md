@@ -1,3 +1,3 @@
 # Xety\Configurator
 
-* [Configurator](Configurator.md) 
+* [Configurator](Configurator.md)

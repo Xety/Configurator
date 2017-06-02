@@ -1,9 +1,10 @@
-# Xety\Configurator\Configurator  
-
+# Xety\Configurator\Configurator
 Configurator class.
 
 ## Implements:
-Xety\Configurator\Interfaces\ConfiguratorInterface, Xety\Configurator\Interfaces\ConfiguratorOptionInterface
+    `Xety\Configurator\Interfaces\ConfiguratorInterface`,
+    `Xety\Configurator\Interfaces\ConfiguratorOptionInterface`,
+
 
 
 
@@ -28,17 +29,14 @@ the values if the param `invert` is true.|
 
 
 
-### Configurator::clear  
-
-**Description**
-
+### Configurator::clear
 ```php
 public clear (void)
 ```
 
-Clear all options stored. 
+**Description**
 
- 
+Clear all options stored.
 
 **Parameters**
 
@@ -52,39 +50,35 @@ Clear all options stored.
 
 
 
-### Configurator::consumeOption  
-
-**Description**
-
+### Configurator::consumeOption
 ```php
 public consumeOption (string $name)
 ```
 
-Read then flush an option. 
+**Description**
 
+Read then flush an option.
 Exemple:  
   
 Config:  
-```  
+```php  
 $config = [  
     'key1' => 'value1'  
-]  
+];  
 ```  
 Usage:  
-```  
+```php  
 $result = $this->consumeOption('key1');  
 ```  
 Result:  
-```  
+```php  
 echo $result; // value1  
 var_dump($config); // []  
-``` 
-
+```
 **Parameters**
 
 * `(string) $name`
-: The name of the option to read then flush.  
-
+: The name of the option to read then flush.
 **Return Values**
 
 `mixed`
@@ -93,26 +87,22 @@ var_dump($config); // []
 
 
 
-### Configurator::flush  
-
-**Description**
-
+### Configurator::flush
 ```php
 public flush (string $filter)
 ```
 
-Flush a list of options from the config array. 
+**Description**
 
+Flush a list of options from the config array.
 Usage:  
-```  
+```php  
 $this->flush('key1', 'key2');  
-``` 
-
+```
 **Parameters**
 
 * `(string) $filter`
-: All the options to remove from the config.  
-
+: All the options to remove from the config.
 **Return Values**
 
 `\Xety\Configurator\Configurator`
@@ -121,23 +111,19 @@ $this->flush('key1', 'key2');
 
 
 
-### Configurator::flushOption  
-
-**Description**
-
+### Configurator::flushOption
 ```php
 public flushOption (string $name)
 ```
 
-Flush an option. 
+**Description**
 
- 
+Flush an option.
 
 **Parameters**
 
 * `(string) $name`
-: The name of the option to flush.  
-
+: The name of the option to flush.
 **Return Values**
 
 `\Xety\Configurator\Configurator`
@@ -146,17 +132,14 @@ Flush an option.
 
 
 
-### Configurator::get  
-
-**Description**
-
+### Configurator::get
 ```php
 public get (void)
 ```
 
-Get all the options. 
+**Description**
 
- 
+Get all the options.
 
 **Parameters**
 
@@ -170,26 +153,22 @@ Get all the options.
 
 
 
-### Configurator::getOption  
-
-**Description**
-
+### Configurator::getOption
 ```php
 public getOption (string $name)
 ```
 
-Get an option value. 
+**Description**
 
+Get an option value.
 Usage:  
-```  
+```php  
 $this->getOption('key');  
-``` 
-
+```
 **Parameters**
 
 * `(string) $name`
-: The option name to to get.  
-
+: The option name to to get.
 **Return Values**
 
 `mixed`
@@ -198,23 +177,19 @@ $this->getOption('key');
 
 
 
-### Configurator::hasOption  
-
-**Description**
-
+### Configurator::hasOption
 ```php
 public hasOption (string $name)
 ```
 
-Check if the option exist. 
+**Description**
 
- 
+Check if the option exist.
 
 **Parameters**
 
 * `(string) $name`
-: The option name to check.  
-
+: The option name to check.
 **Return Values**
 
 `bool`
@@ -223,26 +198,21 @@ Check if the option exist.
 
 
 
-### Configurator::merge  
-
-**Description**
-
+### Configurator::merge
 ```php
 public merge (array $values, bool $invert)
 ```
 
-Merge the values to the options array, or the current options in
-the values if the param `invert` is true. 
+**Description**
 
- 
+Merge the values to the options array, or the current options in
+the values if the param `invert` is true.
 
 **Parameters**
 
 * `(array) $values`
-: The values to merge in the config.  
-* `(bool) $invert`
-: Invert the merge by merging the actual config into the values.  
-
+: The values to merge in the config.* `(bool) $invert`
+: Invert the merge by merging the actual config into the values.
 **Return Values**
 
 `\Xety\Configurator\Configurator`
@@ -251,37 +221,32 @@ the values if the param `invert` is true.
 
 
 
-### Configurator::pushOption  
-
-**Description**
-
+### Configurator::pushOption
 ```php
 public pushOption (string $name, array $args)
 ```
 
-Push the listed args to the named option. 
+**Description**
 
+Push the listed args to the named option.
 Usage:  
-```  
+```php  
 $this->pushOption('key', ['key1' => 'value1'], ['key2' => ['value2' => 'value3']]);  
 ```  
 Result:  
-```  
+```php  
 'key' => [  
     'key1' => 'value1',  
     'key2' => [  
         value2 => value3  
     ]  
 ]  
-``` 
-
+```
 **Parameters**
 
 * `(string) $name`
-: The name of the option.  
-* `(array) $args`
-: A list of values to push into the option key.  
-
+: The name of the option.* `(array) $args`
+: A list of values to push into the option key.
 **Return Values**
 
 `\Xety\Configurator\Configurator`
@@ -290,23 +255,19 @@ Result:
 
 
 
-### Configurator::set  
-
-**Description**
-
+### Configurator::set
 ```php
 public set (array $values)
 ```
 
-Set the values to the options array. Will replace all the configuration options. 
+**Description**
 
- 
+Set the values to the options array. Will replace all the configuration options.
 
 **Parameters**
 
 * `(array) $values`
-: The values to push into the config.  
-
+: The values to push into the config.
 **Return Values**
 
 `\Xety\Configurator\Configurator`
@@ -315,29 +276,24 @@ Set the values to the options array. Will replace all the configuration options.
 
 
 
-### Configurator::setOption  
-
-**Description**
-
+### Configurator::setOption
 ```php
 public setOption (string $name, mixed $value)
 ```
 
-Set a value to the given option. 
+**Description**
 
+Set a value to the given option.
 Usage:  
-```  
+```php  
 $this->setOption('key', 'value');  
 $this->setOption('key', ['key2' => ['value2']]);  
-``` 
-
+```
 **Parameters**
 
 * `(string) $name`
-: The option name.  
-* `(mixed) $value`
-: The option value.  
-
+: The option name.* `(mixed) $value`
+: The option value.
 **Return Values**
 
 `\Xety\Configurator\Configurator`
@@ -346,30 +302,25 @@ $this->setOption('key', ['key2' => ['value2']]);
 
 
 
-### Configurator::transientOption  
-
-**Description**
-
+### Configurator::transientOption
 ```php
 public transientOption (string $name, mixed $value)
 ```
 
-Adds a transient configuration key/value. 
+**Description**
 
+Adds a transient configuration key/value.
 Usage:  
-```  
+```php  
 // Will update the value of the key `key` if it exist,  
 // or it will create it with the value `value`.  
  $this->transientOption('key', 'value');  
-``` 
-
+```
 **Parameters**
 
 * `(string) $name`
-: The name of the option.  
-* `(mixed) $value`
-: The value to set.  
-
+: The name of the option.* `(mixed) $value`
+: The value to set.
 **Return Values**
 
 `\Xety\Configurator\Configurator`

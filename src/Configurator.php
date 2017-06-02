@@ -43,8 +43,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
     }
 
     /**
-     * Merge the values to the options array, or the current options in
-     * the values if the param `invert` is true.
+     * Merge the values to the options array.
      *
      * @param array $values The values to merge in the config.
      * @param bool $invert Invert the merge by merging the actual config into the values.

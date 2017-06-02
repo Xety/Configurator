@@ -27,7 +27,7 @@ class MyClass extends Configurator
 }
 ```
 
-Setup a default configuration:
+You can also setup a default configuration if you want:
 ```php
 <?php
 class MyClass extends Configurator

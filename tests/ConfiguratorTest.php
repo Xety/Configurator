@@ -40,9 +40,9 @@ class ConfiguratorTest extends TestCase
             ]
         ];
 
-        $result = $this->configurator->set($options);
+        $result = $this->configurator->setConfig($options);
 
-        $this->assertSame($options, $result->get());
+        $this->assertSame($options, $result->getConfig());
     }
 
     /**
@@ -57,7 +57,7 @@ class ConfiguratorTest extends TestCase
         ];
 
         $result = $this->configurator->setOption('foo', 'bar');
-        $this->assertSame($options, $result->get());
+        $this->assertSame($options, $result->getConfig());
 
         $options = [
             'foo' => [
@@ -66,11 +66,11 @@ class ConfiguratorTest extends TestCase
         ];
 
         $this->configurator->setOption('foo', ['bar' => 'bez']);
-        $this->assertSame($options, $this->configurator->get());
+        $this->assertSame($options, $this->configurator->getConfig());
 
         $this->configurator->setOption('foo', 'bar');
         $this->configurator->setOption('foo', 'bar2');
-        $this->assertSame(['foo' => 'bar2'], $this->configurator->get());
+        $this->assertSame(['foo' => 'bar2'], $this->configurator->getConfig());
     }
 
     /**
@@ -112,7 +112,7 @@ class ConfiguratorTest extends TestCase
             ],
             'par' => 'dar'
         ];
-        $result = $this->configurator->set($options);
+        $result = $this->configurator->setConfig($options);
 
         $merge = [
             'foo' => 'bar2',
@@ -120,7 +120,7 @@ class ConfiguratorTest extends TestCase
                 'ter'
             ]
         ];
-        $this->configurator->merge($merge);
+        $this->configurator->mergeConfig($merge);
 
         $expected = [
             'foo' => 'bar2',
@@ -129,7 +129,7 @@ class ConfiguratorTest extends TestCase
             ],
             'par' => 'dar'
         ];
-        $this->assertSame($expected, $this->configurator->get());
+        $this->assertSame($expected, $this->configurator->getConfig());
     }
 
     /**
@@ -148,7 +148,7 @@ class ConfiguratorTest extends TestCase
                 'far'
             ]
         ];
-        $result = $this->configurator->set($options);
+        $result = $this->configurator->setConfig($options);
 
         $merge = [
             'foo' => 'bar2',
@@ -157,7 +157,7 @@ class ConfiguratorTest extends TestCase
             ],
             'par' => 'dar'
         ];
-        $this->configurator->merge($merge, true);
+        $this->configurator->mergeConfig($merge, true);
 
         $expected = [
             'foo' => 'bar',
@@ -169,7 +169,7 @@ class ConfiguratorTest extends TestCase
             ],
             'par' => 'dar'
         ];
-        $this->assertSame($expected, $this->configurator->get());
+        $this->assertSame($expected, $this->configurator->getConfig());
     }
 
     /**
@@ -191,7 +191,7 @@ class ConfiguratorTest extends TestCase
             ],
             'par' => 'dar'
         ];
-        $this->configurator->set($options);
+        $this->configurator->setConfig($options);
 
         $result = $this->configurator->consumeOption('foo');
         $this->assertSame('bar', $result);
@@ -212,7 +212,7 @@ class ConfiguratorTest extends TestCase
         $expected = [
             'par' => 'dar'
         ];
-        $this->assertSame($expected, $this->configurator->get());
+        $this->assertSame($expected, $this->configurator->getConfig());
     }
 
     /**
@@ -222,7 +222,7 @@ class ConfiguratorTest extends TestCase
      */
     public function testConsumeOptionDoesNotExist()
     {
-        $this->configurator->set(['foo' => 'bar']);
+        $this->configurator->setConfig(['foo' => 'bar']);
         $this->assertNull($this->configurator->consumeOption('unknown'));
     }
 
@@ -244,9 +244,9 @@ class ConfiguratorTest extends TestCase
             ],
             'par' => 'dar'
         ];
-        $this->configurator->set($options);
-        $result = $this->configurator->flush('foo', 'baz');
-        $this->assertSame(['par' => 'dar'], $result->get());
+        $this->configurator->setConfig($options);
+        $result = $this->configurator->flushConfig('foo', 'baz');
+        $this->assertSame(['par' => 'dar'], $result->getConfig());
     }
 
     /**
@@ -267,9 +267,9 @@ class ConfiguratorTest extends TestCase
             ],
             'par' => 'dar'
         ];
-        $this->configurator->set($options);
-        $result = $this->configurator->clear();
-        $this->assertSame([], $result->get());
+        $this->configurator->setConfig($options);
+        $result = $this->configurator->clearConfig();
+        $this->assertSame([], $result->getConfig());
     }
 
     /**
@@ -288,7 +288,7 @@ class ConfiguratorTest extends TestCase
                 ]
             ]
         ];
-        $this->configurator->set($options);
+        $this->configurator->setConfig($options);
 
         $class = new \stdClass();
 
@@ -311,7 +311,7 @@ class ConfiguratorTest extends TestCase
                 'class' => $class
             ]
         ];
-        $this->assertSame($expected, $result->get());
+        $this->assertSame($expected, $result->getConfig());
     }
 
     /**
@@ -337,7 +337,7 @@ class ConfiguratorTest extends TestCase
             'foo' => 'bar',
             'par' => 'tor'
         ];
-        $this->configurator->set($options);
+        $this->configurator->setConfig($options);
 
         $result = $this->configurator->transientOption('tor', 'bar');
 
@@ -346,7 +346,7 @@ class ConfiguratorTest extends TestCase
             'par' => 'tor',
             'tor' => 'bar'
         ];
-        $this->assertSame($expected, $result->get());
+        $this->assertSame($expected, $result->getConfig());
 
         $result = $this->configurator->transientOption('foo', 'bar2');
 
@@ -355,7 +355,7 @@ class ConfiguratorTest extends TestCase
             'par' => 'tor',
             'tor' => 'bar'
         ];
-        $this->assertSame($expected, $result->get());
+        $this->assertSame($expected, $result->getConfig());
     }
 
     /**

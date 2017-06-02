@@ -27,7 +27,7 @@ class MyClass extends Configurator
 }
 ```
 
-You can also setup a default configuration if you want:
+If you want to setup a default configuration for your class, just do the following :
 ```php
 <?php
 class MyClass extends Configurator
@@ -50,11 +50,11 @@ class MyClass extends Configurator
 
 | Name | Description |
 |------|-------------|
-|[set](#configuratorset)|Set the values to the options array.|
-|[get](#configuratorget)|Get all the options with their values.|
-|[flush](#configuratorflush)|Flush a list of options from the config array.|
-|[merge](#configuratormerge)|Merge the values to the options array.|
-|[clear](#configuratorclear)|Clear all options stored.|
+|[setConfig](#configuratorsetconfig)|Set the values to the options array.|
+|[getConfig](#configuratorgetconfig)|Get all the options with their values.|
+|[flushConfig](#configuratorflushconfig)|Flush a list of options from the config array.|
+|[mergeConfig](#configuratormergeconfig)|Merge the values to the options array.|
+|[clearConfig](#configuratorclearconfig)|Clear all options stored.|
 |[setOption](#configuratorsetoption)|Set a value to the given option.|
 |[getOption](#configuratorgetoption)|Get an option value.|
 |[hasOption](#configuratorhasoption)|Check if the option exist.|
@@ -67,9 +67,9 @@ class MyClass extends Configurator
 
 
 
-### Configurator::set
+### Configurator::setConfig
 ```php
-public set (array $values)
+public setConfig (array $values)
 ```
 
 **Description**
@@ -89,9 +89,9 @@ This function will replace all the configuration options.
 
 
 
-### Configurator::get
+### Configurator::getConfig
 ```php
-public get (void)
+public getConfig (void)
 ```
 
 **Description**
@@ -112,9 +112,9 @@ Get all the options with their values.
 
 
 
-### Configurator::flush
+### Configurator::flushConfig
 ```php
-public flush (string ...$filter)
+public flushConfig (string ...$filter)
 ```
 
 **Description**
@@ -123,7 +123,7 @@ Flush a list of options from the options array.
 
 Usage:
 ```php
-$this->flush('key1', 'key2', 'key3');
+$this->flushConfig('key1', 'key2', 'key3');
 ```
 
 **Parameters**
@@ -138,9 +138,9 @@ $this->flush('key1', 'key2', 'key3');
 
 
 
-### Configurator::merge
+### Configurator::mergeConfig
 ```php
-public merge (array $values, bool $invert = false)
+public mergeConfig (array $values, bool $invert = false)
 ```
 
 **Description**
@@ -161,9 +161,9 @@ Merge the values to the options array.
 
 
 
-### Configurator::clear
+### Configurator::clearConfig
 ```php
-public clear (void)
+public clearConfig (void)
 ```
 
 **Description**

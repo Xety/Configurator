@@ -27,7 +27,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      *
      * @return \Xety\Configurator\Configurator
      */
-    public function set(array $values): Configurator
+    public function setConfig(array $values): Configurator
     {
         $this->config = $values;
 
@@ -39,7 +39,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      *
      * @return array
      */
-    public function get(): array
+    public function getConfig(): array
     {
         return $this->config;
     }
@@ -52,7 +52,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      *
      * @return \Xety\Configurator\Configurator
      */
-    public function merge(array $values, bool $invert = false): Configurator
+    public function mergeConfig(array $values, bool $invert = false): Configurator
     {
         $this->config = ($invert) ? array_merge($values, $this->config) : array_merge($this->config, $values);
 
@@ -71,7 +71,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      *
      * @return \Xety\Configurator\Configurator
      */
-    public function flush(string ...$filter): Configurator
+    public function flushConfig(string ...$filter): Configurator
     {
         $filter = array_flip($filter);
         $this->config = array_diff_key($this->config, $filter);
@@ -84,7 +84,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
      *
      * @return \Xety\Configurator\Configurator
      */
-    public function clear(): Configurator
+    public function clearConfig(): Configurator
     {
         $this->config = [];
 
@@ -270,7 +270,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
     {
         $this->validateName($name);
 
-        return $this->merge([$name => $value]);
+        return $this->mergeConfig([$name => $value]);
     }
 
     /**

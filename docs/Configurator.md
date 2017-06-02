@@ -2,9 +2,7 @@
 Configurator class.
 
 ## Implements:
-    `Xety\Configurator\Interfaces\ConfiguratorInterface`,
-    `Xety\Configurator\Interfaces\ConfiguratorOptionInterface`,
-
+`Xety\Configurator\Interfaces\ConfiguratorInterface`,`Xety\Configurator\Interfaces\ConfiguratorOptionInterface`,
 
 
 
@@ -16,7 +14,7 @@ Configurator class.
 |[consumeOption](#configuratorconsumeoption)|Read then flush an option.|
 |[flush](#configuratorflush)|Flush a list of options from the config array.|
 |[flushOption](#configuratorflushoption)|Flush an option.|
-|[get](#configuratorget)|Get all the options.|
+|[get](#configuratorget)|Get all the options with their values.|
 |[getOption](#configuratorgetoption)|Get an option value.|
 |[hasOption](#configuratorhasoption)|Check if the option exist.|
 |[merge](#configuratormerge)|Merge the values to the options array, or the current options in
@@ -139,7 +137,7 @@ public get (void)
 
 **Description**
 
-Get all the options.
+Get all the options with their values.
 
 **Parameters**
 

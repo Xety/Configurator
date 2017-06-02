@@ -33,7 +33,7 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
     }
 
     /**
-     * Get all the options.
+     * Get all the options with their values.
      *
      * @return array
      */

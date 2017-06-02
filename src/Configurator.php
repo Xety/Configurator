@@ -19,7 +19,9 @@ abstract class Configurator implements ConfiguratorInterface, ConfiguratorOption
     protected $config = [];
 
     /**
-     * Set the values to the options array. Will replace all the configuration options.
+     * Set the values to the options array.
+     *
+     * This function will replace all the configuration options.
      *
      * @param array $values The values to push into the config.
      *

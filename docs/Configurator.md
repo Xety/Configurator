@@ -19,7 +19,7 @@ Configurator class.
 |[hasOption](#configuratorhasoption)|Check if the option exist.|
 |[merge](#configuratormerge)|Merge the values to the options array.|
 |[pushOption](#configuratorpushoption)|Push the listed args to the named option.|
-|[set](#configuratorset)|Set the values to the options array. Will replace all the configuration options.|
+|[set](#configuratorset)|Set the values to the options array.|
 |[setOption](#configuratorsetoption)|Set a value to the given option.|
 |[transientOption](#configuratortransientoption)|Adds a transient configuration key/value.|
 
@@ -258,8 +258,8 @@ public set (array $values)
 
 **Description**
 
-Set the values to the options array. Will replace all the configuration options.
-
+Set the values to the options array.
+This function will replace all the configuration options.
 **Parameters**
 
 * `(array) $values`

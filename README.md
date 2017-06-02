@@ -382,4 +382,4 @@ Usage:
 `\Xety\Configurator\Configurator::class`
 
 # Contribute
-If you want to contribute, please [follow this guide](https://github.com/XetaIO/Xety/Configurator/blob/master/.github/CONTRIBUTING.md).
+If you want to contribute, please [follow this guide](https://github.com/Xety/Configurator/blob/master/.github/CONTRIBUTING.md).

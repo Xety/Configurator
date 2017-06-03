@@ -39,7 +39,7 @@ class MyClass extends Configurator
 
     public function __construct()
     {
-        $this->set($defaultConfig);
+        $this->setConfig($defaultConfig);
     }
 }
 ```
